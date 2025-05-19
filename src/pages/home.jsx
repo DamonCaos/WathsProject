@@ -1,3 +1,5 @@
 export default function Home() {
-    return <h1>Bienvenido a WhatsProject</h1>
+    return <h1 className="text-3xl font-bold text-green-500">Tailwind funcionando</h1>
+
+    
 }
