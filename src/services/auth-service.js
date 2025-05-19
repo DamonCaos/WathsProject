@@ -13,3 +13,20 @@ export async function registerUser(formData) {
 
     return await response.json()
 }
+
+export async function loginUser(credentials)  {
+    const response = await fetch(`${API_URL}/auth/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+    })
+
+    if (!response.ok) {
+        const error = await response.json()
+        throw new Error(error?.error || 'Error al inisicar sesiion')
+    }
+
+    return await response.json()
+} 
